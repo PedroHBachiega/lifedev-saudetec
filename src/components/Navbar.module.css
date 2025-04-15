@@ -3,7 +3,7 @@
     box-shadow: rgba(0, 0, 0, .15) 0px -2px 10 0px;
     justify-content: space-between;
     align-items: center;
-    padding: .5em 2em;
+    padding: 0.5em 2em;
 }
  
 .brand{
@@ -21,18 +21,15 @@
 }
  
 .links_list li a{
-    padding: .4em .6em;
+    padding: 0.4em 0.6em;
 }
  
 .active{
     background-color: #000;
     color: #fff;
 }
-.logout{
-    width: 60px;
-    background-color: darkturquoise;
+
+.exit{
     border: none;
-    border-radius: 10px;
-    padding: 5px;
-    cursor: pointer;
+    background-color: transparent;
 }

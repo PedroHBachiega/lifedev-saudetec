@@ -1,7 +1,7 @@
 //import React from 'react'
 import styles from './Login.Module.css'
 import {useEffect, useState} from 'react'
-import {useAuthentication} from '../../hooks/useAuthentification'
+import {useAuthentication} from '../../hooks/useAuthentication'
 
 const Login = () => {
     const [email, setEmail] = useState(""); 
