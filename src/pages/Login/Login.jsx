@@ -31,17 +31,17 @@ const Login = () => {
     }, [authError]);
 
     return (
-        <>
-            <div className={styles.login}></div>
+        <div className={styles.login}>
             <h1>Entrar</h1>
-            <p>Faça o Login em nossa plataforma de Desenvolvedores</p>
+            <p>Faça login em nossa plataforma de desenvolvedores</p>
             <form onSubmit={handlerSubmit}>
                 <label>
+                    <span>E-mail:</span>
                     <input
                         type="email"
                         name="email"
                         required
-                        placeholder="E-mail do usuario"
+                        placeholder="E-mail do usuário"
                         onChange={(e) => setEmail(e.target.value)}
                         value={email}
                     />
@@ -57,11 +57,11 @@ const Login = () => {
                         value={password}
                     />
                 </label>
-                {!loading && <button className="btn">Entrar</button>}
-                {loading && <button className="btn" disabled>Aguarde...</button>} 
-                {error && <p>{error}</p>}
+                {!loading && <button className={styles.btn}>Entrar</button>}
+                {loading && <button className={styles.btn} disabled>Aguarde...</button>} 
+                {error && <p className={styles.error}>{error}</p>}
             </form>
-        </>
+        </div>
     );
 };
 

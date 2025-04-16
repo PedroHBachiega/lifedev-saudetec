@@ -1,23 +1,24 @@
 import React from 'react'
 import { useState } from 'react'
 import styles from './Navbar.module.css'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
-  const [user, setUser] = useState({ name: 'Victor', idade: 42 })
+  const [user, setUser] = useState({ name: 'Pedro', idade: 19 })
 
   return (
     <>
       <nav className={styles.navbar}>
-        <ul className={styles.link_list}>
-          <li>Home</li>
-          <li>Register</li>
-          <li>New Post</li>
-          <li>Dashboard</li>
-          <li>Aboust Us</li>
-          <li>
-            <button className={styles.logout}>Exit</button>
-          </li>
-        </ul>
+        <div className={styles.links_list}>
+          <NavLink to="/" className={styles.brand}>
+            <span>LIFE</span>Dev
+          </NavLink>
+        <div className={styles.links_list}>
+          <NavLink to="/login" className={({ isActive }) => (isActive ? styles.active : styles.link)}>Login</NavLink>
+          <NavLink to="/register" className={({ isActive }) => (isActive ? styles.active : styles.link)}>Register</NavLink>
+        <button className={styles.exit}>Exit</button>
+        </div>
+        </div>
       </nav>
     </>
   )
