@@ -1,12 +1,12 @@
 //import React from 'react'
 import styles from './Login.Module.css'
-import {useEffect, useState} from 'react'
-import {useAuthentication} from '../../hooks/useAuthentication'
+import { useEffect, useState } from 'react'
+import { useAuthentication } from '../../hooks/useAuthentication'
 
 const Login = () => {
-    const [email, setEmail] = useState(""); 
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState(""); 
+    const [error, setError] = useState("");
     const { login, error: authError, loading } = useAuthentication();
 
     const handlerSubmit = async (e) => {
@@ -18,7 +18,7 @@ const Login = () => {
             password,
         };
 
-        const res = await login(user); 
+        const res = await login(user);
 
         console.log(res);
     };
@@ -32,35 +32,41 @@ const Login = () => {
 
     return (
         <>
-            <div className={styles.login}></div>
-            <h1>Entrar</h1>
-            <p>Faça o Login em nossa plataforma de Desenvolvedores</p>
-            <form onSubmit={handlerSubmit}>
-                <label>
-                    <input
-                        type="email"
-                        name="email"
-                        required
-                        placeholder="E-mail do usuario"
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
-                    />
-                </label>
-                <label>
-                    <span>Senha:</span>
-                    <input
-                        type="password" 
-                        name="password"
-                        required
-                        placeholder="Insira sua senha"
-                        onChange={(e) => setPassword(e.target.value)}
-                        value={password}
-                    />
-                </label>
-                {!loading && <button className="btn">Entrar</button>}
-                {loading && <button className="btn" disabled>Aguarde...</button>} 
-                {error && <p>{error}</p>}
-            </form>
+            <div className={styles.login}>
+                <center>
+                    <h1>Entrar</h1>
+                    <p>Faça o Login em nossa plataforma de Desenvolvedores</p>
+                </center>
+                <form onSubmit={handlerSubmit}>
+                    <label>
+                        <span>E-mail:</span>
+                        <input
+                            type="email"
+                            name="email"
+                            required
+                            placeholder="E-mail do usuario"
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}
+                        />
+                    </label>
+                    <label>
+                        <span>Senha:</span>
+                        <input
+                            type="password"
+                            name="password"
+                            required
+                            placeholder="Insira sua senha"
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                        />
+                    </label>
+                    <center>
+                        {!loading && <button className="btn">Entrar</button>}
+                        {loading && <button className="btn" disabled>Aguarde...</button>}
+                        {error && <p>{error}</p>}
+                    </center>
+                </form>
+            </div >
         </>
     );
 };

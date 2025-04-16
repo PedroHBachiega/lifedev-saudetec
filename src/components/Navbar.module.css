@@ -1,29 +1,39 @@
 .navbar{
-    display: flex;
-    box-shadow: rgba(0, 0, 0, .15) 0px -2px 10 0px;
+    display: flex;    
     justify-content: space-between;
     align-items: center;
     padding: 0.5em 2em;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px -2px 10px 0px;
+    background-color: white;
 }
  
+.links_list{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
 .brand{
     font-size: 1.2em;
 }
  
 .brand span{
     font-weight: 900;
+    color: #000;
     text-transform: uppercase;
 }
- 
-.links_list{
-    display: flex;
+
+.link{
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+} 
+
+.link li{
     list-style: none;
 }
- 
-.links_list li a{
-    padding: 0.4em 0.6em;
-}
- 
+
 .active{
     background-color: #000;
     color: #fff;
