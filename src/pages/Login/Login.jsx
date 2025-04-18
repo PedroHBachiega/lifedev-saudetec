@@ -1,7 +1,7 @@
 //import React from 'react'
 import styles from './Login.Module.css'
 import {useEffect, useState} from 'react'
-import {useAuthentication} from '../../hooks/useAuthentification'
+import {useAuthentication} from '../../hooks/useAuthentication'
 
 const Login = () => {
     const [email, setEmail] = useState(""); 
@@ -32,11 +32,12 @@ const Login = () => {
 
     return (
         <>
-            <div className={styles.login}></div>
+            <div className={styles.login}>
             <h1>Entrar</h1>
-            <p>Faça o Login em nossa plataforma de Desenvolvedores</p>
+            <p>Faça login em nossa plataforma de desenvolvedores</p>
             <form onSubmit={handlerSubmit}>
                 <label>
+                    <span>E-mail:</span>
                     <input
                         type="email"
                         name="email"
@@ -61,6 +62,7 @@ const Login = () => {
                 {loading && <button className="btn" disabled>Aguarde...</button>} 
                 {error && <p>{error}</p>}
             </form>
+            </div>
         </>
     );
 };
