@@ -1,4 +1,3 @@
-//import React from 'react'
 import styles from './Login.Module.css'
 import { useEffect, useState } from 'react'
 import { useAuthentication } from '../../hooks/useAuthentication'
@@ -69,6 +68,6 @@ const Login = () => {
             </div >
         </>
     );
-};
+}; 
 
 export default Login;
