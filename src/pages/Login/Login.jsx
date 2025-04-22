@@ -37,8 +37,8 @@ const Login = () => {
             <p>Faça o Login em nossa plataforma de Desenvolvedores</p>
             <form onSubmit={handlerSubmit}>
                 <label>
-                    <input
-                        <span>E-mail:</span>
+                    <span>E-mail:</span>
+                    <input                        
                         type="email"
                         name="email"
                         required
