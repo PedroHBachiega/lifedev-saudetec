@@ -38,6 +38,7 @@ const Login = () => {
             <form onSubmit={handlerSubmit}>
                 <label>
                     <input
+                        <span>E-mail:</span>
                         type="email"
                         name="email"
                         required
