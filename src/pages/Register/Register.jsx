@@ -17,9 +17,9 @@ const Register = () => {
     const { createUser, error: authError, loading } = useAuthentication()
 
     const handleSubmit = async (e) => {
-        e.preventDefaut()
+        e.preventDefault()
 
-        ServerRouter("")
+        setError("")
 
         const user = {
             displayName,
@@ -85,7 +85,7 @@ const Register = () => {
                     <span>Confirmação de Senha:</span>
                     <input
                         type="password"
-                        name="confirmpassword"
+                        name="confirmPassword"
                         required
                         placeholder="Confirme a senha"
                         onChange={(e) => setConfirmPassword(e.target.value)}
@@ -95,12 +95,11 @@ const Register = () => {
                 {!loading && <button className="btn">Entrar</button>}
                 {loading && (
                     <button className="btn" disabled>
-                        Aguarde..
+                        Aguarde...
                     </button>
                 )}
                 {error && <p className="error">{error}</p>}
             </form>
-
         </div>
     )
 }
