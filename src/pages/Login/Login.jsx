@@ -2,7 +2,7 @@ import styles from './Login.Module.css'
 import { useEffect, useState } from 'react'
 import { useAuthentication } from '../../hooks/useAuthentication'
 
-//teste
+
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
