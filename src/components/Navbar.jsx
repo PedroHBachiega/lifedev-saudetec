@@ -7,6 +7,7 @@ const Navbar = () => {
   const { logout } = useAuthentication()
   const { user } = useAuthValue()
   console.log(user)
+  
   return (
     <>
       <nav className={styles.navbar}>
