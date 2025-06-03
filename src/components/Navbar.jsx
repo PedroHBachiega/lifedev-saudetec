@@ -13,7 +13,7 @@ const Navbar = () => {
       <nav className={styles.navbar}>
         <ul className={styles.links_list}>
           <NavLink to="/" className={styles.brand}
-            activeClassName={styles.active}>
+            activeclassname={styles.active}>
             <li><span>Life</span>Dev</li>
           </NavLink>
           {!user && (

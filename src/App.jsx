@@ -5,7 +5,7 @@ import {AuthProvider} from './context/AuthContext.jsx'
 import Navbar from "./components/Navbar.jsx";
 import Footer from './components/Footer'
 import Home from './pages/Home/Home.jsx'
-import Login from './pages/Login/Login.jsx'
+import Login from './pages/Login/Login'
 import Register from './pages/Register/Register.jsx'
 import './App.css'
 import Post from './pages/Post/Post.jsx'
@@ -51,34 +51,32 @@ function App() {
               element={<About />} />
 
               <Route path='/post/create'
-                element={user ? <CreatePost /> :<Navigate tp="/login"/>} 
+                element={user ? <CreatePost /> :<Navigate to="/login"/>} 
               />
 
               <Route path='/post/id'
-                element={user ? <CreatePost /> :<Navigate tp="/login"/>} 
+                element={user ? <CreatePost /> :<Navigate to="/login"/>} 
               />
 
               <Route path='/post/:id'
-                element={user ? <Post /> :<Navigate tp="/login"/>} 
+                element={user ? <Post /> :<Navigate to="/login"/>} 
               />
 
               <Route path='/search'
-                element={user ? <Search /> :<Navigate tp="/login"/>} 
+                element={user ? <Search /> :<Navigate to="/login"/>} 
               />
 
               <Route path='/login'
-                element={user ? <Login /> :<Navigate tp="/"/>} 
+                element={!user ? <Login /> :<Navigate to="/"/>} 
               />
 
               <Route path='/register'
-                element={user ? <Register /> :<Navigate tp="/"/>} 
+                element={!user ? <Register /> :<Navigate to="/"/>} 
               />
 
               <Route path='/dashboard'
-                element={user ? <Dashboard /> :<Navigate tp="/login"/>} 
+                element={user ? <Dashboard /> :<Navigate to="/login"/>} 
               />
-
-
             </Routes>
           </div>
           <Footer />

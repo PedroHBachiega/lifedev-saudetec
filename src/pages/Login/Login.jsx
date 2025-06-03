@@ -32,7 +32,7 @@ const Login = () => {
 
     return (
         <>
-            <div className={styles.login}></div>
+            <div className={styles.login}>
             <h1>Entrar</h1>
             <p>Faça o Login em nossa plataforma de Desenvolvedores</p>
             <form onSubmit={handlerSubmit}>
@@ -61,6 +61,7 @@ const Login = () => {
                 {loading && <button className="btn" disabled>Aguarde...</button>} 
                 {error && <p>{error}</p>}
             </form>
+            </div>
         </>
     );
 };
